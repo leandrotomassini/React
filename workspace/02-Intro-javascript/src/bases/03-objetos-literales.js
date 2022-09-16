@@ -1,15 +1,17 @@
+
 const persona = {
     nombre: 'Tony',
     apellido: 'Stark',
     edad: 45,
     direccion: {
         ciudad: 'New York',
-        zip: 282828,
-        lat: 14.322,
-        lng: 34.2232
+        zip: 554854,
+        lat: 14.55,
+        lng: 34.9558
     }
 };
 
+// console.table({ persona });
 
 const persona2 = { ...persona };
 persona2.nombre = 'Peter';

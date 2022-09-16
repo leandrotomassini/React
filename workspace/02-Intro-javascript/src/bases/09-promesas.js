@@ -1,35 +1,33 @@
-import { getHeroById } from './bases/08-import-export';
-
+import { getHeroeById } from "./bases/08-import-export";
 
 // const promesa = new Promise((resolve, reject) => {
 
 //     setTimeout(() => {
-//         const heroe = getHeroById(2);
-//         resolve(heroe);
+//         const heroe = getHeroeById(2);
+//         // resolve(heroe);
+//         resolve('No se pudo encontrar el héroe.');
 //     }, 2000);
 
 // });
 
 
 // promesa.then((heroe) => {
-//     console.log(`Then de la promesa ${heroe.owner}`);
-// }).catch(err => console.warn(err));
+//     console.log(heroe);
+// })
+//     .catch(err => console.warn(err));
 
-
-const getHeroByIdAsync = (id) => {
+const getHeroeByIdAsync = (id) => {
 
     return new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            const heroe = getHeroById(id);
-            (heroe) ? resolve(heroe) : reject('No se pudo encontrar el heroe');
+            const p1 = getHeroeById(id);
+            p1? resolve(p1) : reject('El héroe no existe.')
         }, 2000);
 
     });
 
 }
 
-getHeroByIdAsync(1)
-    .then(console.log)
-    .catch(console.warn);
-
+getHeroeByIdAsync(1).then(console.log)
+.catch(console.warn)
