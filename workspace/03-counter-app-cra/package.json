@@ -1,5 +1,5 @@
 {
-  "name": "02-intro-javascript",
+  "name": "counter-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
