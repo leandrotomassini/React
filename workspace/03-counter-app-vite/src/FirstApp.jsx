@@ -1,28 +1,29 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export const FirstApp = ({ title, subTitle, name }) => {
 
-  // console.log(props);
-  
+const FirstApp = ({ title, subtitle, name }) => {
+
+
   return (
     <>
-      <h1 data-testid="test-title"> { title } </h1>
-      {/* <code>{ JSON.stringify( newMessage ) }</code> */}
-      <p>{ subTitle }</p>
-      <p>{ subTitle }</p>
-      <p>{ name }</p>
+      <h1>{title}</h1>
+      <p>{subtitle + 1}</p>
+      <p>{name}</p>
     </>
   )
 }
 
-
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string,
+  subtitle: PropTypes.string
 }
 
 FirstApp.defaultProps = {
-  name: 'Fernando Herrera',
-  subTitle: 'No hay subtítulo',
-  // title: 'No hay título',
+  title: 'No hay título',
+  subtitle: 'No hay subtítulo',
+  name: 'Leandro'
 }
+
+
+export default FirstApp;
