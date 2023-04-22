@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "counter-app-cra",
+=======
+  "name": "counter-app",
+>>>>>>> c32a58255c4c3b65fbd5646b231cbe052c117e6f
   "version": "0.1.0",
   "private": true,
   "dependencies": {
