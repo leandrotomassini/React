@@ -1,8 +1,4 @@
 
-
-// const getImagenPromesa = () => new Promise( resolve => resolve('https://ajskdhaskjdhajs.com') )
-// getImagenPromesa().then( console.log );
-
 const getImagen = async() => {
 
     try {
@@ -25,8 +21,6 @@ const getImagen = async() => {
     
     
 }
-
- getImagen();
 
 
 
