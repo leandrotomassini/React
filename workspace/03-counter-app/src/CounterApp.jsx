@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 
-const CounterApp = ({ value }) => {
+
+const CounterApp = ({ valor }) => {
 
 
 
     return (
         <>
             <h1>Counter App</h1>
-            <h2>{value}</h2>
+            <h2>{valor}</h2>
         </>
     );
 }
