@@ -1,34 +1,33 @@
-import { useFetch } from '../hooks/useFetch';
-import { useCounter } from '../hooks/useCounter';
+
+
+import { useCounter, useFetch } from '../hooks';
+import { LoadingQuote, Quote } from './';
+
 
 export const MultipleCustomHooks = () => {
-1.56
 
-  const { } = useCounter();
-  const { data, isLoading, hasError } = useFetch('https://rickandmortyapi.com/api/character/2');
-  const { name, species } = !!data && data;
+    const { counter, increment } = useCounter(1);
+    const { data, isLoading, hasError } = useFetch(`https://www.breakingbadapi.com/api/quotes/${ counter }`);
+    const { author, quote } = !!data && data[0];
+    
+    return (
+        <>
+            <h1>BreakingBad Quotes</h1>
+            <hr />
 
-  return (
-    <>
-      <h1>The Rick and Morty API</h1>
-      <hr />
+            {
+                isLoading
+                 ? <LoadingQuote />
+                 : <Quote author={ author } quote={ quote } />
+            }
+                      
+            <button 
+                className="btn btn-primary"
+                disabled={ isLoading }
+                onClick={ () => increment() }>
+                Next quote
+            </button>
 
-      {
-        (isLoading) ?
-          (
-            <div className='alert alert-info text-center'>
-              Loading...
-            </div>
-          )
-          : (
-            <blockquote className='blockquote'>
-              <h1 className='mb-1'>{name}</h1>
-              <h3 className='blockquote-footer mt-2'>{species}</h3>
-            </blockquote>
-          )
-      }
-
-      <button className='btn btn-primary'>Next quote</button>
-    </>
-  );
+        </>
+    )
 }

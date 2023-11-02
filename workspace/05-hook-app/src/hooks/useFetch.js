@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+
+export const useFetch = ( url ) => {
 
     const [state, setState] = useState({
-        data: 'null',
+        data: null,
         isLoading: true,
         hasError: null,
-    });
+    })
 
 
     const getFetch = async () => {
 
         setState({
             ...state,
-            isLoading: true
+            isLoading: true,
         });
 
         const resp = await fetch(url);
@@ -22,18 +23,20 @@ export const useFetch = (url) => {
         setState({
             data,
             isLoading: false,
-            hasError: null
+            hasError: null,
         });
     }
 
+
     useEffect(() => {
         getFetch();
-    }, [url]);
+    }, [url])
+    
 
 
     return {
-        data: state.data,
+        data:      state.data,
         isLoading: state.isLoading,
-        hasError: state.hasError
+        hasError:  state.hasError,
     };
 }
