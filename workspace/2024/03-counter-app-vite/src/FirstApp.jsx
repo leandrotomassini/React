@@ -11,7 +11,7 @@ export const FirstApp = ({
 
     return (
         <>
-            <h1>{title}</h1>
+            <div data-testid="test-title">{title}</div>
             <p>{subtitle}</p>
             <p>{name}</p>
         </>
