@@ -1,6 +1,13 @@
-
+import { useContext, useEffect } from 'react';
+import { EditorContext } from './EditorContext';
 
 function EditorModal() {
+
+  const { initEditor } = useContext( EditorContext );
+
+  useEffect( () => {
+    initEditor();
+  } );
 
   return (
     <div className="fade modal modal-lg" id="editormodal" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="editormodalLabel" aria-hidden="true">
@@ -11,7 +18,7 @@ function EditorModal() {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            Modal body
+            <div id="editorjs"></div>
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
